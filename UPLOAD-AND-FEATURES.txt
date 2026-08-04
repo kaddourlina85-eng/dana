@@ -1,0 +1,28 @@
+DANA'S WORLD — FUNCTIONAL UNIQUE-PAGES VERSION
+
+LOGIN
+Username: danathabet
+Password: linalovesyou
+
+UPLOAD
+Upload every extracted file directly to the ROOT of your existing GitHub repository.
+Upload the entire images folder too. Do not upload this ZIP itself.
+
+WORKING TOP BUTTONS
+Back, Forward, Stop, Refresh, Home, Search, Favorites, History, Mail, Print,
+address bar + Go, minimize, maximize, close/reopen, and File/Edit/View/
+Favorites/Tools/Help dropdown menus.
+
+UNIQUE PAGE THEMES
+index.html       Hot-pink cheetah scrapbook desktop
+academics.html   Pink legal notebook/law desktop
+personal.html    Girly vanity/bedroom theme
+personality.html Astrology and personality-test machine
+friendship.html  MSN Messenger and love-letter theme
+art.html         Retro Paint/Photoshop gallery
+reminds.html     Sticker-book favorites folder
+
+PHOTOS
+Replace memory1.jpg through memory8.jpg for Memory Lane.
+Replace headshot.jpg, photo1.jpg through photo3.jpg, and art1.jpg through art6.jpg.
+Keep filenames lowercase and exactly the same.

@@ -1,0 +1,10 @@
+LOGIN DETAILS
+username: danathabet
+password: linalovesyou
+
+This is a client-side visual access gate for a static GitHub Pages website.
+It prevents casual access, but it is not secure authentication because the
+credentials exist in the JavaScript source.
+
+Upload every extracted file to the ROOT of the existing GitHub repository.
+Upload the images folder too.
