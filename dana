@@ -1,3 +1,16 @@
+/dana-site
+  ├── style.css
+  ├── script.js
+  ├── index.html
+  ├── academics.html
+  ├── personal.html
+  ├── personality.html
+  ├── friendship.html
+  ├── art.html
+  └── reminds.html
+  /images
+      (drop all your photos here — headshot.jpg, art1.jpg, art2.jpg, etc.)
+
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root{
@@ -183,3 +196,432 @@ footer{
   text-align:center; padding:50px 5%; color:var(--ink-soft); font-size:.85rem;
   border-top:1px solid var(--line); margin-top:40px;
 }
+
+// mobile nav toggle
+document.querySelectorAll('.nav-toggle').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelector('.nav ul').classList.toggle('open');
+  });
+});
+
+// scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:.15});
+revealEls.forEach(el=>io.observe(el));
+
+// flip phone
+document.querySelectorAll('.flip-phone').forEach(phone=>{
+  phone.addEventListener('click', ()=> phone.classList.toggle('open'));
+});
+
+// gallery lightbox
+const lightbox = document.querySelector('.lightbox');
+if(lightbox){
+  const lightboxImg = lightbox.querySelector('img');
+  document.querySelectorAll('.gallery img').forEach(img=>{
+    img.addEventListener('click', ()=>{
+      lightboxImg.src = img.src;
+      lightbox.classList.add('open');
+    });
+  });
+  lightbox.querySelector('.lightbox-close').addEventListener('click', ()=> lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', e=>{ if(e.target===lightbox) lightbox.classList.remove('open'); });
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dana Thabet</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo">Dana Thabet</div>
+  <button class="nav-toggle">☰</button>
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="personal.html">Personal Life</a></li>
+    <li><a href="personality.html">Personality</a></li>
+    <li><a href="friendship.html">Our Friendship</a></li>
+    <li><a href="art.html">Her Art</a></li>
+    <li><a href="reminds.html">Reminds Me Of</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <span class="eyebrow">B.A. Honours, Law · Carleton University</span>
+  <h1 class="reveal">Dana Thabet</h1>
+  <p class="lead reveal">Law student, wrongful-conviction advocate, bedazzler, thrifter, Y2K girl through and through — and my best friend.</p>
+  <div class="hero-image reveal">
+    <img src="images/headshot.jpg" alt="Dana Thabet headshot">
+  </div>
+  <p class="phone-hint">born August 21, 2003</p>
+</header>
+
+<section class="grid grid-3">
+  <a href="academics.html" class="card reveal">
+    <h3>📓 Academics</h3>
+    <p style="color:var(--ink-soft); margin-top:8px;">Her journey from Syria to a Carleton law degree — and what comes next.</p>
+  </a>
+  <a href="personal.html" class="card reveal">
+    <h3>💌 Personal Life</h3>
+    <p style="color:var(--ink-soft); margin-top:8px;">Family, hobbies, bedazzling, and everything that makes her Dana.</p>
+  </a>
+  <a href="personality.html" class="card reveal">
+    <h3>🔮 Personality</h3>
+    <p style="color:var(--ink-soft); margin-top:8px;">What makes her, her.</p>
+  </a>
+  <a href="friendship.html" class="card reveal">
+    <h3>💕 Our Friendship</h3>
+    <p style="color:var(--ink-soft); margin-top:8px;">Open the flip phone for a message.</p>
+  </a>
+  <a href="art.html" class="card reveal">
+    <h3>🎨 Her Art</h3>
+    <p style="color:var(--ink-soft); margin-top:8px;">A gallery of her work.</p>
+  </a>
+  <a href="reminds.html" class="card reveal">
+    <h3>✨ Reminds Me Of</h3>
+    <p style="color:var(--ink-soft); margin-top:8px;">Cotton candy, mushrooms, and Bratz dolls.</p>
+  </a>
+</section>
+
+<footer>made with ♡ for dana</footer>
+<script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academics — Dana Thabet</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo">Dana Thabet</div>
+  <button class="nav-toggle">☰</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="academics.html" class="active">Academics</a></li>
+    <li><a href="personal.html">Personal Life</a></li>
+    <li><a href="personality.html">Personality</a></li>
+    <li><a href="friendship.html">Our Friendship</a></li>
+    <li><a href="art.html">Her Art</a></li>
+    <li><a href="reminds.html">Reminds Me Of</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <span class="eyebrow">Academics</span>
+  <h1 class="reveal">B.A. Honours, Law</h1>
+  <p class="lead reveal">Carleton University</p>
+</header>
+
+<section>
+  <div class="card reveal">
+    <p>Dana grew up in Syria, where the sound of gunfire and drones overhead were simply part of daily life, and where her father had to leave the country just to provide for the family. A decade later, she graduated from a Canadian university with honours.</p>
+    <p class="quote">"The community and the professors were so supportive — I met my best friends here."</p>
+    <p>Before law, Dana actually considered becoming an actor. She chose a different path for the stability it could offer her family: her father, once a doctor, and her mother, once a teacher, gave up their careers to bring the family to Canada.</p>
+    <p class="quote">"It's our turn," she says of honoring that sacrifice.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title reveal">Her passion: wrongful convictions</h2>
+  <p class="section-sub reveal">Two classes at Carleton changed the direction of her career.</p>
+  <div class="card reveal">
+    <p>Dana discovered how frequent, devastating, and life-altering wrongful convictions can be — and it reshaped how she sees the criminal justice system. Her focus going forward: how wrongful convictions specifically affect women and their families.</p>
+    <div class="chip">Wrongful Convictions</div>
+    <div class="chip">Criminal Law</div>
+    <div class="chip">Women & Justice</div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title reveal">What's next</h2>
+  <div class="grid grid-2">
+    <div class="card reveal">
+      <h3>🎓 M.A. at Carleton</h3>
+      <p style="margin-top:8px; color:var(--ink-soft);">Starting this September, with hopes of a PhD — and one day, teaching at Carleton herself.</p>
+    </div>
+    <div class="card reveal">
+      <h3>📣 Law Ambassador</h3>
+      <p style="margin-top:8px; color:var(--ink-soft);">Created content for the department's social media and connected with prospective students and their families at events.</p>
+    </div>
+  </div>
+</section>
+
+<footer>made with ♡ for dana</footer>
+<script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Life — Dana Thabet</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo">Dana Thabet</div>
+  <button class="nav-toggle">☰</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="personal.html" class="active">Personal Life</a></li>
+    <li><a href="personality.html">Personality</a></li>
+    <li><a href="friendship.html">Our Friendship</a></li>
+    <li><a href="art.html">Her Art</a></li>
+    <li><a href="reminds.html">Reminds Me Of</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <span class="eyebrow">Personal Life</span>
+  <h1 class="reveal">Born August 21, 2003</h1>
+  <p class="lead reveal">Family, hobbies, and the y2k girl herself.</p>
+</header>
+
+<section class="grid grid-2">
+  <div class="card reveal">
+    <h3>💎 Baddie's Bedazzle</h3>
+    <p style="margin-top:8px; color:var(--ink-soft);">Dana's own bedazzling business. She has invested a genuinely alarming amount of money into nail equipment — and it shows.</p>
+  </div>
+  <div class="card reveal">
+    <h3>🛍️ Thrifting</h3>
+    <p style="margin-top:8px; color:var(--ink-soft);">Give her a thrift store and she will not resurface for hours. Vintage Coach bags and Y2K pieces are her specialty finds.</p>
+  </div>
+  <div class="card reveal">
+    <h3>💗 Bratz & Y2K Shows</h3>
+    <p style="margin-top:8px; color:var(--ink-soft);">Peak girly 2000s media appreciator. Bratz dolls forever.</p>
+  </div>
+  <div class="card reveal">
+    <h3>🍄 Mushroom Expert</h3>
+    <p style="margin-top:8px; color:var(--ink-soft);">Ask her literally anything about mushrooms. She knows.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title reveal">Family</h2>
+  <div class="card reveal">
+    <p>Dana's father was a doctor and her mother was a teacher before the family came to Canada — a sacrifice Dana carries with her. Her brother also attended Carleton.</p>
+  </div>
+</section>
+
+<footer>made with ♡ for dana</footer>
+<script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personality — Dana Thabet</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo">Dana Thabet</div>
+  <button class="nav-toggle">☰</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="personal.html">Personal Life</a></li>
+    <li><a href="personality.html" class="active">Personality</a></li>
+    <li><a href="friendship.html">Our Friendship</a></li>
+    <li><a href="art.html">Her Art</a></li>
+    <li><a href="reminds.html">Reminds Me Of</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <span class="eyebrow">Personality</span>
+  <h1 class="reveal">What makes her, her</h1>
+</header>
+
+<section class="grid grid-2">
+  <div class="card reveal"><h3>🔥 Driven</h3><p style="margin-top:8px;color:var(--ink-soft);">From surviving conflict to graduating with honours — nothing stops her.</p></div>
+  <div class="card reveal"><h3>⚖️ Justice-Minded</h3><p style="margin-top:8px;color:var(--ink-soft);">Could talk about wrongful convictions for hours, and you'd want to listen.</p></div>
+  <div class="card reveal"><h3>💕 Family-First</h3><p style="margin-top:8px;color:var(--ink-soft);">Everything she does is for the people who sacrificed for her.</p></div>
+  <div class="card reveal"><h3>✨ Unapologetically Girly</h3><p style="margin-top:8px;color:var(--ink-soft);">Bedazzled nails, Bratz dolls, and a Y2K wardrobe — and she owns it fully.</p></div>
+</section>
+
+<section>
+  <div class="card reveal" style="text-align:center;">
+    <h3 style="margin-bottom:6px;">MBTI Type</h3>
+    <p style="font-family:'Fraunces',serif; font-size:2.4rem; color:var(--hotpink); font-weight:700;">????</p>
+    <p style="color:var(--ink-soft);">[fill in her real type here]</p>
+  </div>
+</section>
+
+<footer>made with ♡ for dana</footer>
+<script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Friendship — Dana Thabet</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo">Dana Thabet</div>
+  <button class="nav-toggle">☰</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="personal.html">Personal Life</a></li>
+    <li><a href="personality.html">Personality</a></li>
+    <li><a href="friendship.html" class="active">Our Friendship</a></li>
+    <li><a href="art.html">Her Art</a></li>
+    <li><a href="reminds.html">Reminds Me Of</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <span class="eyebrow">Our Friendship</span>
+  <h1 class="reveal">Best friends</h1>
+</header>
+
+<section>
+  <div class="phone-wrap reveal">
+    <div class="flip-phone">
+      <div class="phone-lid">open me</div>
+      <div class="phone-body">
+        <div class="phone-screen">[write a note to Dana here 💌]</div>
+      </div>
+    </div>
+  </div>
+  <p class="phone-hint">tap the phone to flip it open</p>
+</section>
+
+<section>
+  <div class="timeline">
+    <div class="item reveal"><h3>How we met</h3><p style="color:var(--ink-soft);">[add your story]</p></div>
+    <div class="item reveal"><h3>Our thing</h3><p style="color:var(--ink-soft);">[inside joke / tradition]</p></div>
+    <div class="item reveal"><h3>A core memory</h3><p style="color:var(--ink-soft);">[favorite memory]</p></div>
+    <div class="item reveal"><h3>Why she's my best friend</h3><p style="color:var(--ink-soft);">[what makes her irreplaceable]</p></div>
+  </div>
+</section>
+
+<footer>made with ♡ for dana</footer>
+<script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Her Art — Dana Thabet</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo">Dana Thabet</div>
+  <button class="nav-toggle">☰</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="personal.html">Personal Life</a></li>
+    <li><a href="personality.html">Personality</a></li>
+    <li><a href="friendship.html">Our Friendship</a></li>
+    <li><a href="art.html" class="active">Her Art</a></li>
+    <li><a href="reminds.html">Reminds Me Of</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <span class="eyebrow">Gallery</span>
+  <h1 class="reveal">Her Art</h1>
+  <p class="lead reveal">Bedazzled pieces, thrifted finds, and everything creative.</p>
+</header>
+
+<section>
+  <div class="gallery">
+    <figure class="reveal"><img src="images/art1.jpg" alt="Dana's art 1"><figcaption>[title]</figcaption></figure>
+    <figure class="reveal"><img src="images/art2.jpg" alt="Dana's art 2"><figcaption>[title]</figcaption></figure>
+    <figure class="reveal"><img src="images/art3.jpg" alt="Dana's art 3"><figcaption>[title]</figcaption></figure>
+    <!-- To add more images, copy the line above, change the number
+         (art4.jpg, art5.jpg...) and drop the matching file into /images -->
+  </div>
+</section>
+
+<div class="lightbox">
+  <button class="lightbox-close">×</button>
+  <img src="" alt="">
+</div>
+
+<footer>made with ♡ for dana</footer>
+<script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reminds Me Of — Dana Thabet</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo">Dana Thabet</div>
+  <button class="nav-toggle">☰</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="personal.html">Personal Life</a></li>
+    <li><a href="personality.html">Personality</a></li>
+    <li><a href="friendship.html">Our Friendship</a></li>
+    <li><a href="art.html">Her Art</a></li>
+    <li><a href="reminds.html" class="active">Reminds Me Of</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <span class="eyebrow">Reminds Me Of</span>
+  <h1 class="reveal">Everything Dana</h1>
+</header>
+
+<section>
+  <div class="cloud reveal">
+    <span>Bratz dolls</span>
+    <span>flip phones</span>
+    <span>vintage Coach bags</span>
+    <span>rhinestones</span>
+    <span>thrift store finds</span>
+    <span>mushrooms 🍄</span>
+    <span>bedazzled nails</span>
+    <span>Y2K low-rise everything</span>
+    <span>[add your own]</span>
+    <span>[add your own]</span>
+  </div>
+</section>
+
+<footer>made with ♡ for dana</footer>
+<script src="script.js"></script>
+</body>
+</html>
